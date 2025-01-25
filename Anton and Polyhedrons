@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+	ios_base::sync_with_stdio(false);
+	map<string, int> mpp;
+	mpp["Tetrahedron"]  = 4;
+	mpp["Cube"]         = 6;
+	mpp["Octahedron"]   = 8;
+	mpp["Dodecahedron"] = 12;
+	mpp["Icosahedron"]  = 20;
+
+	int n;
+	cin >> n;
+
+	int res = 0;
+	for (int i = 0; i < n; i++) {
+		string s;
+		cin >> s;
+
+		res += mpp[s];
+	}
+	cout << res;
+	return 0;
+}
