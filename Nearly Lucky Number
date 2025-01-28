@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+#define ryu ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+
+int main()
+{
+	ryu
+	ll n;
+	cin >>n;
+	
+    int count = 0, rem = 0;
+    while (n != 0) {
+        rem = n % 10;
+        if (rem == 4 || rem == 7) {
+            count++;
+        }
+        n = n / 10;
+    }
+
+    if (count == 4 || count == 7) {
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
+
+	return 0;
+} 
