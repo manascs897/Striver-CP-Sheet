@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n;
+	cin >> n;
+
+	vector <pair <int, int> > stops(n);
+	
+	for (int i = 0; i < n; i++) {
+		cin >> stops[i].first >> stops[i].second;
+	}
+
+	int curr_Passenger = 0;
+	int max_Cap = 0;
+
+	for (int i = 0; i < n; i++) {
+		int ai = stops[i].first;
+		int bi = stops[i].second;
+
+		curr_Passenger -= ai;
+		curr_Passenger += bi;
+
+		max_Cap = max(max_Cap, curr_Passenger);
+	}
+
+	cout << max_Cap;
+
+    return 0;
+}
