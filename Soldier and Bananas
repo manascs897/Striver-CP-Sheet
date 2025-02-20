@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int k, n, w;
+	cin >> k >> n >> w;
+
+	int total_money = 0;
+
+	for (int i = 1; i <= w; i++) {
+		total_money += i * k;
+	}
+
+	if (n > total_money) {
+		cout << 0;
+	} else {
+		cout << total_money - n;
+	}
+
+    return 0;
+}
