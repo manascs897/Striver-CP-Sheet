@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	string str;
+	cin >> str;
+
+	vector <char> freq;
+	for (int i = 0; i < str.size(); i++) {
+		if (find(freq.begin(), freq.end(), str[i]) != freq.end()) {
+			continue;
+		} else {
+			freq.push_back(str[i]);
+		}
+	}
+
+	int count = freq.size();
+
+	if (count % 2 != 0) {
+		cout << "IGNORE HIM!";
+	} else {
+		cout << "CHAT WITH HER!";
+	}
+
+    return 0;
+}
