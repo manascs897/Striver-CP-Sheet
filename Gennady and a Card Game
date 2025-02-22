@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string str;
+	cin >> str;
+
+	vector <pair <char, char> > cards(5);
+
+	for (int i = 0; i < 5; i++) {
+		cin >> cards[i].first >> cards[i].second;
+
+		if (cards[i].first == str[0] || cards[i].second == str[1]) {
+			cout << "YES";
+			return 0;
+		} else {
+			continue;
+		}
+	}
+
+	cout << "NO";
+
+    return 0;
+}
