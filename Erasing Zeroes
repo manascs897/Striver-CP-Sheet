@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int minZerosToRemove(string s) {
+	int first = -1, last = -1, count = 0;
+
+	for (int i = 0; i < s.size(); i++) {
+		if (s[i] == '1') {
+			if (first == -1) first = i;
+
+			last = i;
+		}
+	}
+
+	if (first != -1) {
+		for (int i = first; i <= last; i++) {
+			if (s[i] == '0') {
+				count++;
+			}
+		}
+	}
+
+	return count;
+}
+
+int main() {
+	int t;
+	cin >> t;
+
+	while (t--) {
+		string x;
+		cin >> x;
+		
+		cout << minZerosToRemove(x) << endl;
+	}
+	
+	return 0;
+}
