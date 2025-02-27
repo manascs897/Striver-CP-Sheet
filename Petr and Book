@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int pageCount(int pages, vector <int>& nums) {
+	int day = 0;
+
+    while (pages > 0) { 
+        pages -= nums[day];
+        day = (day + 1) % 7;
+    }
+	
+    return (day == 0) ? 7 : day;
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int pages;
+    cin >> pages;
+
+	vector <int> pageDays(7);
+
+	for (int i = 0; i < 7; i++) {
+		cin >> pageDays[i];
+	}
+
+	cout << pageCount(pages, pageDays);
+
+    return 0;
+}
