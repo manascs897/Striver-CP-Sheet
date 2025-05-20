@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    int min_moves = (n + 1) / 2;
+    for (int moves = min_moves; moves <= n; ++moves) {
+        if (moves % m == 0) {
+            cout << moves << endl;
+            return 0;
+        }
+    }
+
+    cout << -1 << endl;
+    return 0;
+}
