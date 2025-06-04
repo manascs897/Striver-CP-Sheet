@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string str;
+    cin >> str;
+    int n = str.size();
+
+    bool allUpper = true;
+    bool firstLowerRestUpper = islower(str[0]);
+
+    for (int i = 0; i < n; ++i) {
+        if (!isupper(str[i])) {
+            allUpper = false;
+            break;
+        }
+    }
+
+    if (firstLowerRestUpper) {
+        for (int i = 1; i < n; ++i) {
+            if (!isupper(str[i])) {
+                firstLowerRestUpper = false;
+                break;
+            }
+        }
+    }
+
+    if (allUpper || firstLowerRestUpper) {
+        for (int i = 0; i < n; ++i) {
+            if (isupper(str[i])) str[i] = tolower(str[i]);
+            else str[i] = toupper(str[i]);
+        }
+    }
+
+    cout << str << endl;
+    return 0;
+}
