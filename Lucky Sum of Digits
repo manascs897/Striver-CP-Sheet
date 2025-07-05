@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int four = -1,seven = -1;
+	for(int i = n / 7; i >= 0; i--)
+	{
+		if((n - 7 * i) % 4 == 0)
+		{
+			seven = i;
+			four = (n - 7 * i) / 4;
+			break;
+		}
+	}
+	if(four == -1)
+		cout << -1;
+	else
+	{
+		for(int i=0 ;i < four; i++)
+			cout << 4;
+		for(int i = 0; i < seven; i++)
+			cout << 7;
+	}
+	return 0;
+}
