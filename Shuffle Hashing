@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+bool isValidHash(string p, string h) {
+    int m = p.size(), n = h.size();
+    if (m > n) return false;
+
+    sort(p.begin(), p.end());
+
+    for (int i = 0; i + m <= n; i++) {
+        string sub = h.substr(i, m);
+        sort(sub.begin(), sub.end());
+
+        if (sub == p)
+            return true;
+    }
+    return false;
+}
+
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string p, h;
+        cin >> p >> h;
+
+        cout << (isValidHash(p, h) ? "YES\n" : "NO\n");
+    }
+}
