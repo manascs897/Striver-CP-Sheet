@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n, k;
+    cin >> n >> k;
+
+    vector<pair<int,int>> instruments;
+
+    for (int i = 1; i <= n; i++) {
+        int a;
+        cin >> a;
+        instruments.push_back({a, i});
+    }
+
+    sort(instruments.begin(), instruments.end());
+
+    vector<int> ans;
+
+    for (auto &p : instruments) {
+        if (p.first <= k) {
+            k -= p.first;
+            ans.push_back(p.second);
+        } else {
+            break;
+        }
+    }
+
+    cout << ans.size() << "\n";
+    for (int idx : ans) {
+        cout << idx << " ";
+    }
+
+    return 0;
+}
